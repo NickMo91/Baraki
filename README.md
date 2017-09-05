@@ -1,4 +1,6 @@
-# NYCDA Final Project / Search for Drinks and get the recipes, or for ingredients and get recommendations.
+# NYCDA Final Project
+
+* Search for Drinks and get the recipes, or search for ingredients and get recommendations.
 
 <!-- This template allows you to very quickly spin up a React application that's
 equipped with Webpack for builds. It provides the following features:
