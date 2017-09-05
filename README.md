@@ -1,6 +1,6 @@
-# NYCDA React / Webpack Template
+# NYCDA Final Project / Search for Drinks and get the recipes, or for ingredients and get recommendations.
 
-This template allows you to very quickly spin up a React application that's
+<!-- This template allows you to very quickly spin up a React application that's
 equipped with Webpack for builds. It provides the following features:
 
 * ES2017 and JSX using Babel
@@ -43,4 +43,4 @@ Once you start building things with this template, you may want to remove the
 ## License
 
 This is available under the MIT License. Any distributions of it must also carry
-this license.
+this license. -->
