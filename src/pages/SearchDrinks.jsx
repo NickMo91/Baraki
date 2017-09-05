@@ -1,5 +1,5 @@
+import "./SearchDrinks.scss";
 import React from "react";
-import ReactDOM from "react-dom";
 
 
 class SearchDrinks extends React.Component {
@@ -9,16 +9,24 @@ class SearchDrinks extends React.Component {
 			search: "",
 		};
 	}
+
+	_handleChange = (ev) => {
+		this.setState({ search: ev.target.value });
+		console.log(this.state);
+	};
+
+
+
 	render() {
 		return (
 			<div className="App">
-				<h1>I am Drink search bar</h1>
-				<h2>Replace me!</h2>
+				<h1>Drink search</h1>
 				<div className="DrinksSearch">
 					<form className="DrinksSearch-form">
 						<input
 							className="DrinksSearch-form-input"
 							placeholder="Search for Drinks"
+							onChange={this._handleChange}
 						/>
 						<button className="DrinksSearch-form-btn">Go</button>
 					</form>

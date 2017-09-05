@@ -5,8 +5,7 @@ class IngSearch extends React.Component {
 	render() {
 		return (
 			<div className="App">
-				<h1>I am IngSearch</h1>
-				<h2>Replace me!</h2>
+				<h1> Ingredient Search</h1>
 			</div>
 		);
 	}
