@@ -43,7 +43,7 @@ export default {
 		}
 
 		// Construct and return the fetch
-		return fetch(this.BASE_PATH + path + query, {
+		return fetch(this.BASE_PATH + path + ".php" + query, {
 			method,
 			headers,
 			body,

@@ -1,5 +1,8 @@
 import "./SearchDrinks.scss";
 import React from "react";
+import { searchDrinks } from "actions/drinks";
+import { connect } from "react-redux";
+
 
 
 class SearchDrinks extends React.Component {
@@ -15,26 +18,42 @@ class SearchDrinks extends React.Component {
 		console.log(this.state);
 	};
 
-
-
-	render() {
-		return (
-			<div className="App">
-				<h1>Drink search</h1>
-				<div className="DrinksSearch">
-					<form className="DrinksSearch-form">
-						<input
-							className="DrinksSearch-form-input"
-							placeholder="Search for Drinks"
-							onChange={this._handleChange}
-						/>
-						<button className="DrinksSearch-form-btn">Go</button>
-					</form>
-
-				</div>
-			</div>
-		);
-	}
+_handleSubmit = (ev) => {
+	ev.preventDefault();
+	this.props.searchDrinks(this.state.search);
 }
 
-export default SearchDrinks;
+
+
+render() {
+	return (
+		<div className="DrinkSearch">
+			<h1>Drink search</h1>
+			<div className="DrinksSearch-form">
+				<form className="DrinksSearch-form-form" onSubmit={this._handleSubmit}>
+					<input
+						className="DrinksSearch-form-input"
+						placeholder="Search for Drinks"
+						onChange={this._handleChange}
+						value={this.state.search}
+					/>
+					<button className="DrinksSearch-form-btn">Go</button>
+				</form>
+			</div>
+			<div className="DrinkSearch-Drinks">
+				<h1>hello</h1>
+			</div>
+		</div>
+	);
+}
+}
+
+function mapStateToProps(state) {
+	const { drinks  } = state.drinks;
+
+	return {
+		drinks,
+	};
+}
+
+export default connect(mapStateToProps, { searchDrinks })(SearchDrinks);
