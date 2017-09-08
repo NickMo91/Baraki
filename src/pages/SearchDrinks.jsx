@@ -2,7 +2,8 @@ import "./SearchDrinks.scss";
 import React from "react";
 import { searchDrinks } from "actions/drinks";
 import { connect } from "react-redux";
-
+import DrinkResult from "components/DrinkResult";
+import Loader from "components/Loader";
 
 
 class SearchDrinks extends React.Component {
@@ -26,9 +27,17 @@ _handleSubmit = (ev) => {
 
 
 render() {
+	let content;
+
+	if (this.props.isLoading) {
+		return <Loader/>;
+	}
+	if (!this.props.drinks) {
+		return null;
+	}
 	return (
 		<div className="DrinkSearch">
-			<h1>Drink search</h1>
+			<h1>Drink search:</h1>
 			<div className="DrinksSearch-form">
 				<form className="DrinksSearch-form-form" onSubmit={this._handleSubmit}>
 					<input
@@ -40,19 +49,21 @@ render() {
 					<button className="DrinksSearch-form-btn">Go</button>
 				</form>
 			</div>
-			<div className="DrinkSearch-Drinks">
-				<h1>hello</h1>
-			</div>
+			{this.props.drinks.length &&
+			<DrinkResult drink={this.props.drinks} />}
 		</div>
 	);
 }
 }
 
+
+
 function mapStateToProps(state) {
-	const { drinks  } = state.drinks;
+	const { drinks, isLoading } = state.drinks;
 
 	return {
 		drinks,
+		isLoading,
 	};
 }
 

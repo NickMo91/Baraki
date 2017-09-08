@@ -11,7 +11,7 @@ import  SearchDrinks  from "pages/SearchDrinks";
 import IngSearch from "pages/IngSearch";
 import reducers from "./reducers";
 import reduxThunk from "redux-thunk";
-import Cocktail from "pages/Cocktail";
+import Drink from "pages/Drink";
 
 
 const store = createStore(reducers, applyMiddleware(reduxThunk));
@@ -27,7 +27,7 @@ class App extends React.Component {
 						<Switch>
 							<Route exact path="/" component={Home}/>
 							<Route exact path="/SearchDrinks" component={SearchDrinks}/>
-							<Route path="/drinks/:drinkId" component={Cocktail} />
+							<Route path="/drinks/:drinkId" component={Drink} />
 							<Route exact path="/IngSearch" component={IngSearch}/>
 							<Route path="*" component={FourOhFour} />
 						</Switch>

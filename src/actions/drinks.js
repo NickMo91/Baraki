@@ -27,3 +27,42 @@ export function searchDrinks(drink) {
 		});
 	};
 }
+
+
+export function loadDrink(id) {
+	return (dispatch, getStore) => {
+		const { drinks } = getStore().drinks;
+
+		// First check if we have the drink. If we do, serve it right away!
+		const cachedDrink = drinks.find((drink) => drink.idDrink === id);
+		if (cachedDrink) {
+			return dispatch({
+				type: "DRINKS_LOAD_SUCCESS",
+				drink: cachedDrink,
+			});
+		}
+
+		// Otherwise, request it
+		dispatch({ type: "DRINKS_LOAD_START" });
+
+		DrinksAPI.get(`/search/${id}`).then((res) => {
+			if (res.drinks && res.drinks.idDrink) {
+				dispatch({
+					type: "DRINKS_LOAD_SUCCESS",
+					drink: res.drinks,
+				});
+			}
+			else {
+				dispatch({
+					type: "DRINKS_LOAD_FAILURE",
+					error: "Unable to find that drink",
+				});
+			}
+		}).catch(() => {
+			dispatch({
+				type: "DRINKS_LOAD_FAILURE",
+				error: "Something went wrong, please refresh and try again",
+			});
+		});
+	};
+}

@@ -1,6 +1,7 @@
 const INITIAL_STATE = {
 	drinks: [],
 	activeDrink: null,
+	isLoading: false,
 	error: null,
 };
 
@@ -12,26 +13,30 @@ export default function(state = INITIAL_STATE, action) {
 	case "DRINKS_SEARCH_START":
 		return {
 			...state,
-			gifs: [],
+			isLoading: true,
+			drinks: [],
 		};
 
 	case "DRINKS_SEARCH_SUCCESS":
 		return {
 			...state,
-			gifs: action.drinks,
+			isLoading: false,
+			drinks: action.drinks,
 		};
 
 		// Load
 	case "DRINKS_LOAD_START":
 		return {
 			...state,
-			activeGif: null,
+			isLoading: true,
+			activeDrink: null,
 		};
 
 	case "GIFS_LOAD_SUCCESS":
 		return {
 			...state,
-			activeGif: action.drinks,
+			isLoading: true,
+			activeDrink: action.drinks,
 		};
 
 		// Error cases
@@ -39,6 +44,7 @@ export default function(state = INITIAL_STATE, action) {
 	case "DRINK_LOAD_FAILURE":
 		return {
 			...state,
+			isLoading: false,
 			error: action.error,
 		};
 
