@@ -32,11 +32,11 @@ export default function(state = INITIAL_STATE, action) {
 			activeDrink: null,
 		};
 
-	case "GIFS_LOAD_SUCCESS":
+	case "DRINKS_LOAD_SUCCESS":
 		return {
 			...state,
-			isLoading: true,
-			activeDrink: action.drinks,
+			isLoading: false,
+			activeDrink: action.drink,
 		};
 
 		// Error cases

@@ -7,12 +7,10 @@ import Loader from "components/Loader";
 
 
 class SearchDrinks extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			search: "",
-		};
-	}
+	state = {
+		search: "",
+	};
+
 
 	_handleChange = (ev) => {
 		this.setState({ search: ev.target.value });
@@ -30,33 +28,40 @@ render() {
 	let content;
 
 	if (this.props.isLoading) {
-		return <Loader/>;
+		content = <Loader className="loader">Pouring...</Loader>;
 	}
-	if (this.props.drinks === null) {
-		return content = (
-			<div>
-				<h1>Couldn't find drink(s). Please try again!</h1>
-			</div>
-		);
+	else {
+		content = [0, 1, 2].map((col) => {
+			return (
+				<div>
+					{this.props.drinks
+						.filter((drink, idx) => idx % 3 === col)
+						.map((drink) => {
+							return <DrinkResult drink={drink} key={drink.idDrink}/>;
+						})
+					}
+				</div>
+			);
+		});
 	}
-	return (
-		content =
-		(<div className="DrinksSearch">
-			<div className="DrinksSearch-form">
 
+	return (
+		<div className="DrinksSearch">
+			<div className="DrinksSearch-form">
 				<form className="DrinksSearch-form-form" onSubmit={this._handleSubmit}>
-					<h1 className="DrinksSearch-text">I am looking for </h1>
 					<input
 						className="DrinksSearch-form-form-input"
-						placeholder="What are you looking for"
+						placeholder="Pick your poison"
 						onChange={this._handleChange}
 						value={this.state.search}
 					/>
 					<button className="DrinksSearch-form-form-btn">Go</button>
 				</form>
 			</div>
-			{<DrinkResult drink={this.props.drinks} />}
-		</div>)
+			<div className="DrinksSearch-results">
+				{content}
+			</div>
+		</div>
 	);
 }
 }

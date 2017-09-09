@@ -1,3 +1,4 @@
+import "./Drink.scss";
 import React from "react";
 import { connect } from "react-redux";
 import { loadDrink } from "actions/drinks";
@@ -22,14 +23,45 @@ class Drink extends React.Component {
 		else {
 			console.log(drink);
 			content = (
-				<div>
-					<img className="Drink-image" src={drink.images}/>
+				<div className="Drink">
+					<div className="Drink-box">
+						<div className="Drink-img">
+							<img className="Drink-image" src={drink.strDrinkThumb}/>
+						</div>
+					</div>
+					<div className="Drink-info">
+						<div className="Drink-name">
+							<h1 className="Drink-name-h1">{drink.strDrink}</h1>
+						</div>
+						<div className="Drink-info-a">
+
+							<h1 className="Drink-info-a-category">{drink.strCategory}</h1>
+							<h1 className="Drink-info-a-glass">{drink.strGlass}</h1>
+						</div>
+						<div className="Drink-info-ingredients">
+							<h1 className="Drink-info-ingredients-h1">Ingredients</h1>
+							<h2>{drink.strMeasure1} {drink.strIngredient1}</h2>
+							<h2>{drink.strMeasure2} {drink.strIngredient2}</h2>
+							<h2>{drink.strMeasure3} {drink.strIngredient3}</h2>
+							<h2>{drink.strMeasure4} {drink.strIngredient4}</h2>
+							<h2>{drink.strMeasure5} {drink.strIngredient5}</h2>
+							<h2>{drink.strMeasure6} {drink.strIngredient6}</h2>
+							<h2>{drink.strMeasure7} {drink.strIngredient7}</h2>
+							<h2>{drink.strMeasure8} {drink.strIngredient8} </h2>
+							<h2>{drink.strMeasure9} {drink.strIngredient9} </h2>
+						</div>
+						<div className="Drink-Instructions">
+							<h1 className="Drink-Instructions-h1">Instructions</h1>
+							<p className="Drink-Instructions-p"> {drink.strInstructions}</p>
+						</div>
+					</div>
+
 				</div>
 			);
 		}
 
 		return (
-			<div className="Drink">
+			<div className="Drink-render">
 				{content}
 			</div>
 		);
