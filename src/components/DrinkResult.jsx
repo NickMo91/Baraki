@@ -7,20 +7,21 @@ class DrinkResult extends React.Component {
 		const { drink } = this.props;
 		console.log("drinkresult", drink, "drinkresult");
 		return (
-			<div>
+
+			<div className="DrinkResult">
 				{drink.map((drink) => {
 					return (
-						<div>
-							<h1>{drink.strDrink}</h1>
-							<h1>{drink.strInstructions}</h1>
+						<div className="DrinkResult-render">
+							<h1 className="DrinkResult-render-h1" >{drink.strDrink}</h1>
 							<img
 								src={drink.strDrinkThumb}
-								className="DrinkResult-img"
+								className="DrinkResult-render-img"
 							/>
 						</div>
 					);
 				})}
 			</div>
+
 		);
 	}
 }

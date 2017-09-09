@@ -1,7 +1,21 @@
 .Nav {
 	padding: 20px;
+	background-color: #D4B483;
 
 	&-link {
 		padding: 10px;
+		font-size: 20px;
+		text-align: center;
+		text-decoration: none;
+		font-weight: bold;
+		color:  #3E3C34;
+
+		&:hover{
+			text-decoration: underline;
+		}
+		&.is-active{
+			text-decoration: underline;
+
+		}
 	}
 }

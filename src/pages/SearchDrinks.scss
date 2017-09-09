@@ -1,0 +1,43 @@
+.DrinksSearch {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+}
+
+.DrinksSearch-text{
+	text-align: center;
+	font-size: 25px;
+	padding: 10px;
+}
+
+.DrinksSearch-form {
+	margin-top: 20px;
+	text-align: center;
+	padding: 20px;
+}
+
+.DrinksSearch-form-form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #D3C8B4;
+	box-shadow: 3px 3px 2px #CCC7B6;
+margin-left: 50px;
+margin-right: 50px;
+padding: 20px;
+}
+
+.DrinksSearch-form-form-input {
+		text-align: center;
+		font-size: 20px;
+		padding: 10px;
+		background-color: #d3c8b4;
+		border: 1px solid #98937F;
+}
+
+.DrinksSearch-form-form-btn {
+	background-color: #EEC491;
+	font-size: 20px;
+	padding: 10px;
+}

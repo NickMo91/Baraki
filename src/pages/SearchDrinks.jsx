@@ -32,26 +32,31 @@ render() {
 	if (this.props.isLoading) {
 		return <Loader/>;
 	}
-	if (!this.props.drinks) {
-		return null;
+	if (this.props.drinks === null) {
+		return content = (
+			<div>
+				<h1>Couldn't find drink(s). Please try again!</h1>
+			</div>
+		);
 	}
 	return (
-		<div className="DrinkSearch">
-			<h1>Drink search:</h1>
+		content =
+		(<div className="DrinksSearch">
 			<div className="DrinksSearch-form">
+
 				<form className="DrinksSearch-form-form" onSubmit={this._handleSubmit}>
+					<h1 className="DrinksSearch-text">I am looking for </h1>
 					<input
-						className="DrinksSearch-form-input"
-						placeholder="Search for Drinks"
+						className="DrinksSearch-form-form-input"
+						placeholder="What are you looking for"
 						onChange={this._handleChange}
 						value={this.state.search}
 					/>
-					<button className="DrinksSearch-form-btn">Go</button>
+					<button className="DrinksSearch-form-form-btn">Go</button>
 				</form>
 			</div>
-			{this.props.drinks.length &&
-			<DrinkResult drink={this.props.drinks} />}
-		</div>
+			{<DrinkResult drink={this.props.drinks} />}
+		</div>)
 	);
 }
 }
