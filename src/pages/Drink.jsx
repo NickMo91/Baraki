@@ -34,7 +34,6 @@ class Drink extends React.Component {
 							<h1 className="Drink-name-h1">{drink.strDrink}</h1>
 						</div>
 						<div className="Drink-info-a">
-
 							<h1 className="Drink-info-a-category">{drink.strCategory}</h1>
 							<h1 className="Drink-info-a-glass">{drink.strGlass}</h1>
 						</div>
@@ -51,7 +50,7 @@ class Drink extends React.Component {
 							<h2>{drink.strMeasure9} {drink.strIngredient9} </h2>
 						</div>
 						<div className="Drink-Instructions">
-							<h1 className="Drink-Instructions-h1">Instructions</h1>
+							<h2 className="Drink-Instructions-h1">Instructions</h2>
 							<p className="Drink-Instructions-p"> {drink.strInstructions}</p>
 						</div>
 					</div>

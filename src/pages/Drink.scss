@@ -5,9 +5,9 @@ display: flex;
 flex-wrap: wrap;
 justify-content: center;
 flex-flow: row;
-box-shadow: 2px 1px 2px 1px #EAF0CE;
+box-shadow: 2px 1px 2px 1px #8aad95;
 margin: 20px;
-font-family: "Avenir Heavy Oblique";
+font-family: "Verdana", serif;
 text-shadow: 1px 1px;
 }
 
@@ -36,7 +36,6 @@ text-align: center;
 }
 
 .Drink-info {
-margin: 35px;
 display: flex;
 flex-flow: column;
 justify-content: center;
@@ -46,12 +45,13 @@ font-size: 20px;
 .Drink-info-a {
 	font-weight: bold;
 	margin-bottom: 50px;
-float: right;
 	&-category {
+		padding: 3px;
 
 	}
 
 	&-glass {
+		padding: 3px;
 
 	}
 }
@@ -61,14 +61,15 @@ float: right;
 	font-weight: bold;
 	font-size: 20px;
 	padding: 10px;
-	line-height: 23px;
+	line-height: 25px;
 }
 
 .Drink-info-ingredients-h1 {
 	font-weight: bold;
 	font-size: 25px;
 	opacity: 0.9;
-	padding: 8px;
+	padding-bottom: 10px;
+	text-decoration: underline;
 }
 
 .Drink-Instructions {
@@ -77,6 +78,7 @@ display: flex;
 flex-flow: column;
 
 &-h1 {
+	text-decoration: underline;
 	font-weight: bold;
 	font-size: 25px;
 	opacity: 0.9;

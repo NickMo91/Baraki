@@ -1,12 +1,18 @@
 .DrinksSearch {
 display: flex;
 flex-wrap: wrap;
+flex-flow: column;
+text-align: center;
 justify-content: center;
 }
 
 .DrinksSearch-form {
-	margin-top: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-flow: row;
+	justify-content: center;
 	text-align: center;
+	margin-top: 20px;
 	padding: 20px;
 }
 
@@ -14,8 +20,7 @@ justify-content: center;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	box-shadow: 1px 2px 1px #EAF0CE;
-	background-color: #181D27;
+	box-shadow: 1px 1px 1px 1px #8aad95;
 	color: #EAF0CE;
 	width: 500px;
 	padding: 20px;
@@ -39,4 +44,5 @@ justify-content: center;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	text-align: center;
 }

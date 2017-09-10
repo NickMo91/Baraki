@@ -1,0 +1,25 @@
+.Home {
+display: flex;
+flex-flow: column;
+text-align: center;
+justify-content: center;
+
+
+&-title {
+	font-family: "Verdana", serif;
+font-weight: bold;
+	font-size: 50px;
+	padding: 50px;
+	color: #ffed00;
+	text-shadow: 2px 2px 2px #000;
+}
+
+&-p {
+	padding: 50px;
+	font-family: "Verdana", serif;
+	font-weight: bold;
+	font-size: 25px;
+	color: #ffed00;
+	text-shadow: 2px 2px #000;
+}
+	}
