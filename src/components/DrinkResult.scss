@@ -9,6 +9,10 @@ text-decoration: none;
 .DrinkResult-render {
 margin: 20px;
 box-shadow: 1px 1px 1px 1px  #8aad95;
+
+&:hover {
+	transform: scale(0.9);
+}
 }
 
 .DrinkResult-render-h1 {
@@ -27,7 +31,5 @@ box-shadow: 1px 1px 1px 1px  #8aad95;
 	height:300px;
 	margin: 10px;
 
-	&:hover {
-		transform: scale(0.9);
-	}
+
 }
