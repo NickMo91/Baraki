@@ -6,9 +6,6 @@ import { NavLink } from "react-router-dom";
 class Navigation extends React.Component {
 	render() {
 		const links = [{
-			to: "/Home",
-			text: "Baraki",
-		}, {
 			to: "/",
 			text: "Home",
 		}, {
