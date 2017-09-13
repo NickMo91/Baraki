@@ -31,18 +31,10 @@ render() {
 		content = <Loader className="loader">Pouring...</Loader>;
 	}
 	else {
-		content = [0, 1, 2].map((col) => {
-			return (
-				<div>
-					{this.props.drinks
-						.filter((drink, idx) => idx % 3 === col)
-						.map((drink) => {
-							return <DrinkResult drink={drink} key={drink.idDrink}/>;
-						})
-					}
-				</div>
-			);
-		});
+		content = this.props.drinks
+			.map((drink) => {
+				return <DrinkResult drink={drink} key={drink.idDrink}/>;
+			});
 	}
 
 	return (
@@ -51,7 +43,7 @@ render() {
 				<form className="DrinksSearch-form-form" onSubmit={this._handleSubmit}>
 					<input
 						className="DrinksSearch-form-form-input"
-						placeholder="Pick your poison"
+						placeholder="Search here.."
 						onChange={this._handleChange}
 						value={this.state.search}
 					/>
