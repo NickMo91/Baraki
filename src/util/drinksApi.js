@@ -1,6 +1,3 @@
-// Don't ever do this! This should be in a .env file!
-const API_KEY = "1";
-
 export default {
 	BASE_PATH: "http://www.thecocktaildb.com/api/json/v1/1",
 
@@ -27,7 +24,7 @@ export default {
 		// Add API key to args
 		args = {
 			...args,
-			api_key: API_KEY,
+			api_key: process.env.API_KEY,
 		};
 
 		if (method === "POST" || method === "PUT") {
