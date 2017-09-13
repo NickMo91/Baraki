@@ -28,6 +28,34 @@ export function searchDrinks(drink) {
 	};
 }
 
+export function searchIngredients(drink) {
+	return (dispatch) => {
+		dispatch({ type: "DRINK_SEARCH_START" });
+
+		DrinksAPI.get("/filter", {
+			args: { i: drink },
+		}).then((res) => {
+			if (res.drinks) {
+				dispatch({
+					type: "DRINKS_SEARCH_SUCCESS",
+					drinks: res.drinks,
+				});
+			}
+			else {
+				dispatch({
+					type: "DRINKS_SEARCH_FAILURE",
+					error: "Search Failed",
+				});
+			}
+		}).catch((err) => {
+			dispatch({
+				type: "DRINKS_SEARCH_FAILURE",
+				error: "Something went wrong, try again.",
+			});
+		});
+	};
+}
+
 
 export function loadDrink(id) {
 	return (dispatch, getStore) => {

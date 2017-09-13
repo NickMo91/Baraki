@@ -8,7 +8,7 @@ import Home from "pages/Home";
 import FourOhFour from "pages/404";
 import Navigation from "components/Navigation";
 import  SearchDrinks  from "pages/SearchDrinks";
-import IngSearch from "pages/IngSearch";
+import SearchIngredient from "pages/IngSearch";
 import reducers from "./reducers";
 import reduxThunk from "redux-thunk";
 import Drink from "pages/Drink";
@@ -28,7 +28,7 @@ class App extends React.Component {
 							<Route exact path="/" component={Home}/>
 							<Route exact path="/SearchDrinks" component={SearchDrinks}/>
 							<Route path="/drinks/:drinkId" component={Drink} />
-							<Route exact path="/IngSearch" component={IngSearch}/>
+							<Route exact path="/IngSearch" component={SearchIngredient}/>
 							<Route path="*" component={FourOhFour} />
 						</Switch>
 					</div>
