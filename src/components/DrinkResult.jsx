@@ -14,6 +14,7 @@ class DrinkResult extends React.Component {
 						<img
 							src={drink.strDrinkThumb}
 							className="DrinkResult-render-img"
+							alt="Image of the drink."
 						/>
 					</div>
 				</Link>

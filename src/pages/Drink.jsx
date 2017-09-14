@@ -26,7 +26,10 @@ class Drink extends React.Component {
 				<div className="Drink">
 					<div className="Drink-box">
 						<div className="Drink-img">
-							<img className="Drink-image" src={drink.strDrinkThumb}/>
+							<img className="Drink-image"
+								 src={drink.strDrinkThumb}
+								 alt="Image of the drink."
+							/>
 						</div>
 					</div>
 					<div className="Drink-info">
