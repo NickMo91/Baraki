@@ -1,5 +1,5 @@
 export default {
-	BASE_PATH: "http://www.thecocktaildb.com/api/json/v1/1",
+	BASE_PATH: "https://www.thecocktaildb.com/api/json/v1/1",
 
 	/**
 	 * Fires a request at the API
