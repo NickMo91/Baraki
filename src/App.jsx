@@ -26,7 +26,7 @@ class App extends React.Component {
 						<Navigation/>
 						<Switch>
 							<Route exact path="/" component={Home}/>
-							<Route exact path="/SearchDrinks" component={SearchDrinks}/>
+							<Route exact path="/SearchDrinks" component={SearchDrinks} setState/>
 							<Route path="/drinks/:drinkId" component={Drink} />
 							<Route exact path="/IngSearch" component={SearchIngredient}/>
 							<Route path="*" component={FourOhFour} />
