@@ -44,7 +44,7 @@
     "style-loader": "^0.18.2",
     "superstatic": "^5.0.1",
     "webpack": "^3.4.1",
-    "webpack-dev-server": "^2.6.1"
+    "webpack-dev-server": ">=3.1.11"
   },
   "devDependencies": {}
 }
